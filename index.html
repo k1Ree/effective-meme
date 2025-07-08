@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Открытие приложения</title>
+    <title>Открыть приложение</title>
     <meta charset="UTF-8" />
     <script>
-      setTimeout(function () {
-        window.location.href = "https://play.google.com/store/apps/details?id=by.rw.client";
-      }, 2000); // Если не сработает — перейти в Google Play
+      function openApp() {
+        var now = new Date().getTime();
+        setTimeout(function () {
+          var elapsed = new Date().getTime() - now;
+          // Если не было редиректа, отправляем в Google Play
+          if (elapsed < 1500) {
+            window.location.href = "https://play.google.com/store/apps/details?id=by.rw.client";
+          }
+        }, 1000);
+
+        // Попытка открыть приложение напрямую
+        window.location = "intent://#Intent;package=by.rw.client;end;";
+      }
     </script>
   </head>
-  <body>
-    <a id="openApp" href="intent://#Intent;package=by.rw.client;scheme=;end;">Открыть приложение</a>
-    <script>
-      window.location = document.getElementById("openApp").href;
-    </script>
+  <body onload="openApp()">
+    <p>Попытка открыть приложение...</p>
   </body>
 </html>
