@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Открытие приложения</title>
-
-</head>
-<body>
- <button id='b'> клик</button>
-  <script>
-    function re() {
-    window.location.href = "fbconnect://cct.by.rw.client/ru/route/?from=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&to=%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D1%91%D0%B2&date=2025-06-29"
-    }
-    document.getElementById('b').addEventListener('click',re)
-  </script>
-</body>
+  <head>
+    <title>Открытие приложения</title>
+    <meta charset="UTF-8" />
+    <script>
+      setTimeout(function () {
+        window.location.href = "https://play.google.com/store/apps/details?id=by.rw.client";
+      }, 2000); // Если не сработает — перейти в Google Play
+    </script>
+  </head>
+  <body>
+    <a id="openApp" href="intent://#Intent;package=by.rw.client;scheme=;end;">Открыть приложение</a>
+    <script>
+      window.location = document.getElementById("openApp").href;
+    </script>
+  </body>
 </html>
