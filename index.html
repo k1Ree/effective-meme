@@ -1,25 +1,14 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Открыть приложение</title>
-    <meta charset="UTF-8" />
-    <script>
-      function openApp() {
-        var now = new Date().getTime();
-        setTimeout(function () {
-          var elapsed = new Date().getTime() - now;
-          // Если не было редиректа, отправляем в Google Play
-          if (elapsed < 1500) {
-            window.location.href = "https://play.google.com/store/apps/details?id=by.rw.client";
-          }
-        }, 1000);
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Открыть приложение БЖД</title>
+</head>
+<body>
 
-        // Попытка открыть приложение напрямую
-        window.location = "intent://#Intent;package=by.rw.client;end;";
-      }
-    </script>
-  </head>
-  <body onload="openApp()">
-    <p>Попытка открыть приложение...</p>
-  </body>
+  <button onclick="window.location.href='intent://#Intent;package=by.rw.client;end'">
+    Открыть приложение БЖД
+  </button>
+
+</body>
 </html>
