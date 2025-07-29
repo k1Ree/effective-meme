@@ -1,14 +1,82 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Открыть приложение БЖД</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spinning Colored Rope</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f8f8;
+      margin: 0;
+    }.rope-wrapper {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  animation: spin 3s linear infinite;
+}
+
+.strand {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  background-size: cover;
+}
+
+.green {
+  background: repeating-linear-gradient(
+    45deg,
+    green 0%,
+    green 10%,
+    transparent 10%,
+    transparent 20%
+  );
+  transform: rotate(0deg);
+}
+
+.blue {
+  background: repeating-linear-gradient(
+    45deg,
+    blue 0%,
+    blue 10%,
+    transparent 10%,
+    transparent 20%
+  );
+  transform: rotate(120deg);
+}
+
+.yellow {
+  background: repeating-linear-gradient(
+    45deg,
+    goldenrod 0%,
+    goldenrod 10%,
+    transparent 10%,
+    transparent 20%
+  );
+  transform: rotate(240deg);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
 </head>
 <body>
-
-  <button onclick="window.location.href='intent://#Intent;package=by.rw.client;end'">
-    Открыть приложение БЖД
-  </button>
-
+  <div class="rope-wrapper">
+    <div class="strand green"></div>
+    <div class="strand blue"></div>
+    <div class="strand yellow"></div>
+  </div>
 </body>
 </html>
